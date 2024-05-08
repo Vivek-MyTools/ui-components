@@ -5,6 +5,8 @@
  */
 package com.nc.tools.ui.components.ui.test;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author vipa0816
@@ -21,10 +23,17 @@ public class UIListTest extends javax.swing.JFrame {
     }
     
     private void addSamples() {
-        num++;
-        list.addElement("Mango_" + num);
-        list.addElement("Apple_" + num);
-        list.addElement("Grapes_" + num);
+        for(int i = 0; i < 10; i++){
+            list.addElement("Mango_" + ++num);
+            list.addElement("Apple_" + ++num);
+            list.addElement("Grapes_" + ++num);
+            list.addElement("Banana_" + ++num);
+            list.addElement("Strawberry_" + ++num);
+            list.addElement("Blueberry_" + ++num);
+            list.addElement("Sapota_" + ++num);
+            list.addElement("Water Melon_" + ++num);
+            list.addElement("Musk Melon_" + ++num);
+        }
     }
 
     /**
@@ -49,13 +58,15 @@ public class UIListTest extends javax.swing.JFrame {
         });
         getContentPane().add(itemName, java.awt.BorderLayout.PAGE_START);
 
+        list.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         list.setHideKey(true);
+        list.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/nc/tools/ui/components/resources/icons8-add-to-favorites-20.png")).getImage());
 
         javax.swing.GroupLayout listLayout = new javax.swing.GroupLayout(list);
         list.setLayout(listLayout);
         listLayout.setHorizontalGroup(
             listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 217, Short.MAX_VALUE)
         );
         listLayout.setVerticalGroup(
             listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,15 +84,20 @@ public class UIListTest extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, java.awt.BorderLayout.PAGE_END);
 
-        pack();
+        setSize(new java.awt.Dimension(233, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        addSamples();
+        new Thread(()->{
+            addSamples();
+        }).start();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void itemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNameActionPerformed
         list.addElement(itemName.getText());
+        new JLabel();
     }//GEN-LAST:event_itemNameActionPerformed
 
     /**

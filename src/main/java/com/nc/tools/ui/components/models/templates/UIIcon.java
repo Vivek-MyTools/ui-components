@@ -20,14 +20,14 @@ public class UIIcon extends JPanel{
     private final Image image;
     private final int iconWidth;
     private final int iconHeight;
-    private final int delta = 9;
+    private final int delta = 5;
     
     public UIIcon(Image image, int width, int height){
         this.image = image;
         this.iconWidth = width;
         this.iconHeight = height;
         setLayout(new FlowLayout(FlowLayout.LEFT, 1, 0));
-        setPreferredSize(new Dimension(width+delta, height+delta));
+        setPreferredSize(new Dimension(width+delta, height));
         setOpaque(false);
     }
     
@@ -38,7 +38,7 @@ public class UIIcon extends JPanel{
     }
 
     private void draw(Graphics g) {
-        g.drawImage(image, 10, 0, iconWidth, iconHeight, null);
+        g.drawImage(image, delta, 0, iconWidth, iconHeight, null);
         g.dispose();
     }
     

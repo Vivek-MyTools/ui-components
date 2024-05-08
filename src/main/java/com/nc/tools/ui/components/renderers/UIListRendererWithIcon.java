@@ -8,7 +8,6 @@ package com.nc.tools.ui.components.renderers;
 import com.nc.tools.ui.components.models.templates.ListValueTemplate;
 import com.nc.tools.ui.components.models.UIListKeyValuePair;
 import com.nc.tools.ui.components.ui.UIList;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import javax.swing.JList;

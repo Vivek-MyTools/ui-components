@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem; 
 import javax.swing.JPopupMenu;
@@ -42,10 +43,8 @@ public class UIList extends javax.swing.JPanel implements Serializable{
     private JMenuItem edit = new JMenuItem("Edit");
     private JMenuItem showInExplorer = new JMenuItem("Show In Explorer");
     
-    
     public UIList(Image image) {               
-        this.image = image;
-        
+        this.image = image;        
     }
 
     public UIList(){        
@@ -101,7 +100,7 @@ public class UIList extends javax.swing.JPanel implements Serializable{
     public void addShowInExplorerListener(ActionListener listener) {
         showInExplorer.addActionListener(listener);
     }  
-    
+     
     public Image getImage() {
         return image;
     }
