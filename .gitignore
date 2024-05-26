@@ -9,8 +9,6 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-target/
-
 
 # Package Files #
 *.jar
@@ -25,4 +23,3 @@ target/
 hs_err_pid*
 replay_pid*
 /target/
-*.properties
