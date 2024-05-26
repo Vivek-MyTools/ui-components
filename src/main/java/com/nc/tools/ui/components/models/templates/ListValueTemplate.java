@@ -25,22 +25,27 @@ public class ListValueTemplate extends javax.swing.JPanel {
     private void addComponents(){
         add(icon);
         if(!hideKey) add(keyLabel);
-        add(valueLabel);  
+        add(valueLabel);        
         setOpaque(true);
     }
     
     public void setKeyFontAndColor(Font font, Color color){
         keyLabel.setFont(font);
-        keyLabel.setForeground(color);
+        keyLabel.setForeground(color);        
+    }
+    
+    public void highLightText(Color fgColor, Color bgColor){
+        keyLabel.setOpaque(true);
+        keyLabel.setForeground(fgColor);
+        keyLabel.setBackground(bgColor);        
     }
    
     public void setValueFontAndColor(Font font, Color color){
         valueLabel.setFont(font);
         valueLabel.setForeground(color);
     }
-  
-    public void setBackgroundColor(Color color){       
-        keyLabel.setBackground(color);
+   
+    public void setBackgroundColor(Color color){                       
         setBackground(color);
     }
     

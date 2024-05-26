@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import javax.swing.DefaultListModel;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem; 
 import javax.swing.JPopupMenu;
@@ -116,6 +115,10 @@ public class UIList extends javax.swing.JPanel implements Serializable{
     public void setHideKey(boolean hideKey) {
         this.hideKey = hideKey;
     }
+
+    public JPopupMenu getMenu() {
+        return menu;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -182,7 +185,7 @@ public class UIList extends javax.swing.JPanel implements Serializable{
         if(!elements.containsKey(key)){
             elements.put(key, value);
             model.addElement(new UIListKeyValuePair(key, value));
-            list.ensureIndexIsVisible( list.getModel().getSize() -1 );
+            list.ensureIndexIsVisible( list.getModel().getSize() -1 );            
         } else {
             throw new DuplicateKeyException("Duplicate key ["+key+"] not allowed in this list");
         }
@@ -193,6 +196,11 @@ public class UIList extends javax.swing.JPanel implements Serializable{
             String value = elements.get(key);                
             list.setSelectedValue(new UIListKeyValuePair(key, value), true);
         }
+    }
+    
+    public void setSelectedElement(String key) {
+        String value = elements.get(key);                
+        list.setSelectedValue(new UIListKeyValuePair(key, value), true);
     }
     
     public List<UIListKeyValuePair> getSelectedValuesList(){
