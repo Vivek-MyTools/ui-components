@@ -120,6 +120,10 @@ public class UIList extends javax.swing.JPanel implements Serializable{
         return menu;
     }
     
+    public void enableList(boolean enable) {
+        list.setEnabled(enable);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
